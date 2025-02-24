@@ -2,6 +2,7 @@ const translations = {
     en: {
         greeting: "Hello, I am Domingo",
         viewCV: "View my CV",
+        viewCard: "View my Cover Letter",
         aboutMe: "About me",
         aboutParagraph: "I am passionate about technology and software development. I love learning and working on challenging projects that help me grow professionally. My hobbies include video games, cooking, and exercising.",
         skills: "Skills",
@@ -12,6 +13,7 @@ const translations = {
     es: {
         greeting: "Hola, soy Domingo",
         viewCV: "Ver mi CV",
+        viewCard: "Ver mi Carta",
         aboutMe: "Sobre mí",
         aboutParagraph: "Soy un apasionado de la tecnología y el desarrollo de software. Me encanta aprender y trabajar en proyectos desafiantes que me permitan crecer profesionalmente. Entre mis aficiones se encuentran los videojuegos, cocinar y hacer ejercicio.",
         skills: "Skills",
@@ -23,7 +25,8 @@ const translations = {
 
 const translateToEnglish = () => {
     document.getElementById("escribe").textContent = translations.en.greeting;
-    document.querySelector("#cv a").textContent = translations.en.viewCV;
+    document.querySelectorAll("#cv a")[0].textContent = translations.en.viewCV;
+    document.querySelectorAll("#cv a")[1].textContent = translations.en.viewCard;
     document.querySelector("#sobremi h1").textContent = translations.en.aboutMe;
     document.getElementById("miparrafo").textContent = translations.en.aboutParagraph;
     document.querySelector("#skills h1").textContent = translations.en.skills;
@@ -34,7 +37,8 @@ const translateToEnglish = () => {
 
 const translateToSpanish = () => {
     document.getElementById("escribe").textContent = translations.es.greeting;
-    document.querySelector("#cv a").textContent = translations.es.viewCV;
+    document.querySelectorAll("#cv a")[0].textContent = translations.es.viewCV;
+    document.querySelectorAll("#cv a")[1].textContent = translations.es.viewCard;
     document.querySelector("#sobremi h1").textContent = translations.es.aboutMe;
     document.getElementById("miparrafo").textContent = translations.es.aboutParagraph;
     document.querySelector("#skills h1").textContent = translations.es.skills;

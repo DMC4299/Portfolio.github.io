@@ -25,6 +25,11 @@ button:hover{
     color: white;
     transform: scale(1.05);
 }
+#contacto img{
+    width: 25px;
+    height: 25px;
+    padding-top: 20px;
+}
 
 #modoscuro, #translate-en{
     position: fixed;
@@ -187,8 +192,4 @@ h2 {
     background-color: #555;
 }
 
-#icongmail, #icongithub, #iconlikedln {
-    width: 30px;
-    height: 30px;
-    padding-top: 20px;
-}
+
