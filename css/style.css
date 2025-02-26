@@ -1,25 +1,21 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: white;
 }
-
 .darkmode {
     background-color: #121212;
     color: white;
 }
-
 button {
     transition: background-color 0.3s, color 0.3s;
     border-radius: 10px;
     border: none;
 }
-
 button:hover{
     background-color: #1c7bbf;
     color: white;
@@ -30,11 +26,9 @@ button:hover{
     height: 25px;
     padding-top: 20px;
 }
-
-#modoscuro, #translate-en{
+#modoscuro, #translate-en, #translate-es{
     position: fixed;
     top: 20px;
-    right: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -44,52 +38,26 @@ button:hover{
     border-radius: 10px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+#modoscuro{
+    right: 20px;
 }
 #translate-en {
-    position: fixed;
-    top: 20px;
-    right: 262px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #1c7bbf; 
-    color: white; 
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    right: 262px; 
 }
 #translate-es {
-    position: fixed;
-    top: 20px;
     right: 160px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #1c7bbf; 
-    color: white; 
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 #hola {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     height: 450px;
 }
-
 #hola h1 {
     font-size: 50px;
 }
-
 #saludo {
     height: 50px;
     width: 50px;
 }
-
 #cv a {
     background-color: rgb(22, 116, 170);
     border-radius: 10px;
@@ -98,19 +66,16 @@ button:hover{
     text-decoration: none;
     padding: 15px;
 }
-
-#sobremi {
+#apartado, #hola {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-
-#sobremi h1 {
+#apartado h1 {
     font-size: 25px;
     color: lightseagreen;
 }
-
 #divmedio {
     display: flex;
     align-items: center;
@@ -118,7 +83,6 @@ button:hover{
     text-align: left;
     max-width: 600px;
 }
-
 #mifoto {
     width: 150px;
     border-radius: 100px;
@@ -126,7 +90,6 @@ button:hover{
     margin-bottom: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 #miparrafo {
     font-size: 18px;
     line-height: 1.5;
@@ -135,7 +98,6 @@ button:hover{
     font-size: 15px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
 }
-
 hr {
     width: 90px;
     height: 4px;
@@ -143,53 +105,31 @@ hr {
     border-radius: 10px;
     margin-bottom: 30px;
 }
-
-#skills {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 100px;
-}
-
-#skills h1 {
-    font-size: 25px;
-    color: lightseagreen;
-}
-
 #lenguajes {
     display: flex;
     height: 125px;
 }
-
 #parte img {
     width: 50px;
     height: 50px;
-    padding: 20px 45px 0 45px;
+    padding: 20px;
     transition: transform 0.3s ease-in-out;
 }
-
 #parte img:hover {
     transform: scale(1.5);
 }
-
 h2 {
     font-size: 15px;
     color: lightseagreen;
 }
-
 ::-webkit-scrollbar {
     width: 15px;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #888; 
     border-radius: 10px; 
     border: 2px solid #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-
-
