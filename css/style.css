@@ -133,3 +133,49 @@ h2 {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
+#proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.proyecto {
+    background-color: #fff;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.proyecto:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.proyecto h2 {
+    font-size: 20px;
+    color: lightseagreen;
+}
+
+.proyecto p {
+    font-size: 14px;
+    color: #333;
+}
+
+.proyecto a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1c7bbf;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.proyecto a:hover {
+    background-color: #155a94;
+}
