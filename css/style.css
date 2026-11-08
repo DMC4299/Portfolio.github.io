@@ -1,175 +1,316 @@
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+:root {
+    --color-fondo: #ffffff;
+    --color-texto: #222222;
+    --color-principal: lightseagreen;
+    --color-boton: #1c7bbf;
+    --color-boton-hover: #155a94;
+    --color-tarjeta: #ffffff;
+    --color-texto-tarjeta: #333333;
+    --color-sombra: rgba(0, 0, 0, 0.15);
+    --color-scroll: #888888;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: white;
-}
-.darkmode {
-    background-color: #121212;
-    color: white;
-}
-button {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     transition: background-color 0.3s, color 0.3s;
-    border-radius: 10px;
-    border: none;
 }
-button:hover{
-    background-color: #1c7bbf;
-    color: white;
-    transform: scale(1.05);
+
+/* ========================================
+   MODO OSCURO
+======================================== */
+
+body.darkmode {
+    --color-fondo: #121212;
+    --color-texto: #ffffff;
+    --color-principal: #40cfc5;
+    --color-boton: #176ba5;
+    --color-boton-hover: #258aca;
+    --color-tarjeta: #1e1e1e;
+    --color-texto-tarjeta: #eeeeee;
+    --color-sombra: rgba(0, 0, 0, 0.4);
+    --color-scroll: #555555;
 }
-#contacto img{
-    width: 25px;
-    height: 25px;
-    padding-top: 20px;
-}
-#modoscuro, #translate-en, #translate-es{
+
+/* ========================================
+   BOTONES DE CONFIGURACIÓN
+======================================== */
+
+#controles {
     position: fixed;
     top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #1c7bbf; 
-    color: white; 
+    background-color: var(--color-boton);
+    color: white;
     border: none;
     border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px var(--color-sombra);
+    transition: background-color 0.3s, transform 0.3s;
 }
-#modoscuro{
-    right: 20px;
+
+button:hover {
+    background-color: var(--color-boton-hover);
+    transform: scale(1.05);
 }
-#translate-en {
-    right: 262px; 
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--color-principal);
+    outline-offset: 3px;
 }
-#translate-es {
-    right: 160px;
-}
+
+/* ========================================
+   PRESENTACIÓN
+======================================== */
+
 #hola {
-    height: 450px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 40px;
 }
+
 #hola h1 {
     font-size: 50px;
+    margin-bottom: 25px;
 }
+
 #saludo {
     height: 50px;
     width: 50px;
+    vertical-align: middle;
+    object-fit: contain;
 }
+
+/* ========================================
+   CURRÍCULUM
+======================================== */
+
+#cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 #cv a {
-    background-color: rgb(22, 116, 170);
+    display: inline-block;
+    background-color: var(--color-boton);
     border-radius: 10px;
     font-size: 20px;
     color: white;
     text-decoration: none;
     padding: 15px;
+    transition: background-color 0.3s, transform 0.3s;
 }
-#apartado, #hola {
+
+#cv a:hover {
+    background-color: var(--color-boton-hover);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+#contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#contacto img {
+    width: 25px;
+    height: 25px;
+    margin-top: 20px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+#contacto img:hover {
+    transform: scale(1.2);
+}
+
+/* ========================================
+   APARTADOS
+======================================== */
+
+.apartado {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 35px 20px;
+    text-align: center;
 }
-#apartado h1 {
+
+.apartado h1 {
     font-size: 25px;
-    color: lightseagreen;
+    color: var(--color-principal);
 }
+
+hr {
+    width: 90px;
+    height: 4px;
+    background-color: var(--color-principal);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   SOBRE MÍ
+======================================== */
+
 #divmedio {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: left;
+    gap: 15px;
     max-width: 600px;
+    width: 100%;
 }
+
 #mifoto {
     width: 150px;
-    border-radius: 100px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px var(--color-sombra);
 }
+
 #miparrafo {
-    font-size: 18px;
-    line-height: 1.5;
-    margin: 0;
-    border-radius: 5px;
+    flex: 1;
     font-size: 15px;
-    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    margin: 0;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 4px 4px var(--color-sombra);
 }
-hr {
-    width: 90px;
-    height: 4px;
-    background-color: lightseagreen;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-#lenguajes {
-    display: flex;
-    height: 125px;
-}
-#parte img {
-    width: 50px;
-    height: 50px;
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-#parte img:hover {
-    transform: scale(1.5);
-}
+
+/* ========================================
+   SKILLS
+======================================== */
+
 h2 {
     font-size: 15px;
-    color: lightseagreen;
+    color: var(--color-principal);
 }
-::-webkit-scrollbar {
-    width: 15px;
+
+#lenguajes,
+.lenguajes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 700px;
+    min-height: 100px;
+    margin-bottom: 20px;
 }
-::-webkit-scrollbar-thumb {
-    background-color: #888; 
-    border-radius: 10px; 
-    border: 2px solid #f1f1f1;
+
+.parte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+
+.parte img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
 }
+
+.parte img:hover {
+    transform: scale(1.3);
+}
+
+/* ========================================
+   PROYECTOS
+======================================== */
+
 #proyectos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .proyecto {
-    background-color: #fff;
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto-tarjeta);
     padding: 20px;
     width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px var(--color-sombra);
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .proyecto:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--color-sombra);
 }
 
 .proyecto h2 {
     font-size: 20px;
-    color: lightseagreen;
+    color: var(--color-principal);
 }
 
 .proyecto p {
     font-size: 14px;
-    color: #333;
+    color: var(--color-texto-tarjeta);
+    line-height: 1.5;
+    flex-grow: 1;
 }
 
 .proyecto a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #1c7bbf;
+    background-color: var(--color-boton);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -177,5 +318,161 @@ h2 {
 }
 
 .proyecto a:hover {
-    background-color: #155a94;
+    background-color: var(--color-boton-hover);
+}
+
+/* ========================================
+   BARRA DE DESPLAZAMIENTO
+======================================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll);
+    border-radius: 10px;
+    border: 2px solid var(--color-fondo);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+}
+
+/* ========================================
+   RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+
+    #controles {
+        top: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    #controles button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    #hola {
+        min-height: 400px;
+    }
+
+    #hola h1 {
+        font-size: 38px;
+    }
+
+    #divmedio {
+        max-width: 550px;
+    }
+
+    .proyecto {
+        width: calc(50% - 20px);
+        min-width: 240px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+
+    #controles {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        justify-content: center;
+        flex-direction: row-reverse;
+        gap: 5px;
+    }
+
+    #controles button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    #hola {
+        min-height: 380px;
+        padding: 80px 15px 30px;
+    }
+
+    #hola h1 {
+        font-size: 28px;
+    }
+
+    #saludo {
+        width: 35px;
+        height: 35px;
+    }
+
+    #cv a {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .apartado {
+        padding: 25px 15px;
+    }
+
+    #divmedio {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #mifoto {
+        width: 120px;
+        height: 120px;
+        margin: 0 0 15px;
+    }
+
+    #miparrafo {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #lenguajes,
+    .lenguajes {
+        min-height: auto;
+        gap: 5px;
+    }
+
+    .parte img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #proyectos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyecto {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+    }
+}
+
+/* ========================================
+   REDUCIR MOVIMIENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
