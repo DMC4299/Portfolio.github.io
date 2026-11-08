@@ -1,43 +1,69 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const textoelemento = document.getElementById('escribe');
-    let index = 0;
-    const velocidad = 120;
-    let texto = textoelemento.textContent; 
-    
-    
-    textoelemento.textContent = ''; 
 
-    // Función de escritura tipo máquina
-    function typeWriter() {
-        if (index < texto.length) {
-            textoelemento.textContent += texto.charAt(index);
-            index++;
-            setTimeout(typeWriter, velocidad);
-        } else {
-            setTimeout(function() {
-                textoelemento.textContent = ''; 
-                index = 0; 
-                typeWriter(); 
-            }, 1500);
+document.addEventListener("DOMContentLoaded", function () {
+
+    const textoElemento = document.getElementById("escribe");
+
+    if (!textoElemento) {
+        return;
+    }
+
+    let textoActual = textoElemento.textContent;
+    let indice = 0;
+    let temporizador = null;
+
+    const velocidad = 120;
+    const pausaFinal = 1500;
+
+    // Detiene cualquier animación anterior.
+    function detenerAnimacion() {
+        if (temporizador !== null) {
+            clearTimeout(temporizador);
+            temporizador = null;
         }
     }
-    function actualizarTexto(nuevoTexto) {
-        texto = nuevoTexto; 
-        textoelemento.textContent = ''; 
-        index = 0; 
-        typeWriter();
+
+    // Animación de escritura.
+    function escribir() {
+
+        if (indice < textoActual.length) {
+
+            textoElemento.textContent += textoActual.charAt(indice);
+
+            indice++;
+
+            temporizador = setTimeout(escribir, velocidad);
+
+        } else {
+
+            temporizador = setTimeout(function () {
+
+                textoElemento.textContent = "";
+                indice = 0;
+
+                escribir();
+
+            }, pausaFinal);
+        }
     }
-    typeWriter();
-    const translations = {
-        en: "Hello, I am Domingo",
-        es: "Hola, soy Domingo"
-    };
-    const translateToEnglish = () => {
-        actualizarTexto(translations.en);
-    };
-    const translateToSpanish = () => {
-        actualizarTexto(translations.es);
-    };
-    document.getElementById("translate-en").addEventListener("click", translateToEnglish);
-    document.getElementById("translate-es").addEventListener("click", translateToSpanish);
+
+    // Permite cambiar el texto desde traduccion.js.
+    function actualizarTexto(nuevoTexto) {
+
+        detenerAnimacion();
+
+        textoActual = nuevoTexto;
+        indice = 0;
+
+        textoElemento.textContent = "";
+
+        escribir();
+    }
+
+    // Función pública para el sistema de traducción.
+    window.actualizarSaludo = actualizarTexto;
+
+    // Iniciar animación.
+    textoElemento.textContent = "";
+    escribir();
+
 });
