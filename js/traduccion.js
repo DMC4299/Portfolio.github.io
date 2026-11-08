@@ -1,52 +1,116 @@
-const translations = {
-    en: {
-        greeting: "Hello, I am Domingo",
-        viewCV: "View my CV",
-        viewCard: "View my Cover Letter",
-        aboutMe: "About me",
-        aboutParagraph: "I am passionate about technology and software development. I love learning and working on challenging projects that help me grow professionally. My hobbies include video games, cooking, and exercising.",
-        skills: "Skills",
-        languages: "Languages",
-        frameworks: "Frameworks and Libraries",
-        tools: "Technologies and Tools"
-    },
-    es: {
-        greeting: "Hola, soy Domingo",
-        viewCV: "Ver mi CV",
-        viewCard: "Ver mi Carta",
-        aboutMe: "Sobre mí",
-        aboutParagraph: "Soy un apasionado de la tecnología y el desarrollo de software. Me encanta aprender y trabajar en proyectos desafiantes que me permitan crecer profesionalmente. Entre mis aficiones se encuentran los videojuegos, cocinar y hacer ejercicio.",
-        skills: "Skills",
-        languages: "Lenguajes",
-        frameworks: "Frameworks y librerías",
-        tools: "Tecnologías y herramientas"
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botonIngles = document.getElementById("translate-en");
+    const botonEspanol = document.getElementById("translate-es");
+
+    const traducciones = {
+        es: {
+            greeting: "Hola, soy Domingo",
+            viewCV: "Ver mi CV",
+            viewCard: "Ver carta de presentación",
+            aboutMe: "Sobre mí",
+            aboutParagraph: "Soy una persona apasionada por la tecnología y el desarrollo de software. Me gusta aprender, afrontar nuevos retos y desarrollar soluciones que aporten valor.",
+            skills: "Habilidades",
+            languages: "Lenguajes",
+            frameworks: "Frameworks",
+            tools: "Herramientas"
+        },
+
+        en: {
+            greeting: "Hello, I am Domingo",
+            viewCV: "View my CV",
+            viewCard: "View my cover letter",
+            aboutMe: "About me",
+            aboutParagraph: "I am passionate about technology and software development. I enjoy learning, taking on new challenges and developing solutions that provide value.",
+            skills: "Skills",
+            languages: "Languages",
+            frameworks: "Frameworks",
+            tools: "Tools"
+        }
+    };
+
+    function cambiarIdioma(idioma) {
+
+        const textos = traducciones[idioma];
+
+        if (!textos) return;
+
+        // Actualizar idioma del documento
+        document.documentElement.lang = idioma;
+
+        // Actualizar saludo animado
+        if (typeof window.actualizarSaludo === "function") {
+            window.actualizarSaludo(textos.greeting);
+        } else {
+            const saludo = document.getElementById("escribe");
+
+            if (saludo) {
+                saludo.textContent = textos.greeting;
+            }
+        }
+
+        // Actualizar sección Sobre mí
+        const tituloSobreMi = document.getElementById("titulo-sobremi");
+        const parrafoSobreMi = document.getElementById("miparrafo");
+
+        if (tituloSobreMi) {
+            tituloSobreMi.textContent = textos.aboutMe;
+        }
+
+        if (parrafoSobreMi) {
+            parrafoSobreMi.textContent = textos.aboutParagraph;
+        }
+
+        // Actualizar sección Habilidades
+        const tituloSkills = document.getElementById("titulo-skills");
+        const tituloLenguajes = document.getElementById("titulo-lenguajes");
+        const tituloFrameworks = document.getElementById("titulo-frameworks");
+        const tituloHerramientas = document.getElementById("titulo-herramientas");
+
+        if (tituloSkills) {
+            tituloSkills.textContent = textos.skills;
+        }
+
+        if (tituloLenguajes) {
+            tituloLenguajes.textContent = textos.languages;
+        }
+
+        if (tituloFrameworks) {
+            tituloFrameworks.textContent = textos.frameworks;
+        }
+
+        if (tituloHerramientas) {
+            tituloHerramientas.textContent = textos.tools;
+        }
+
+        // Actualizar enlaces del CV y carta
+        const enlacesCV = document.querySelectorAll("#cv a");
+
+        if (enlacesCV.length >= 2) {
+            enlacesCV[0].textContent = textos.viewCV;
+            enlacesCV[1].textContent = textos.viewCard;
+        }
+
+        // Actualizar botón del modo oscuro
+        if (typeof window.actualizarTextoModoOscuro === "function") {
+            window.actualizarTextoModoOscuro();
+        }
     }
-};
 
-const translateToEnglish = () => {
-    document.getElementById("escribe").textContent = translations.en.greeting;
-    document.querySelectorAll("#cv a")[0].textContent = translations.en.viewCV;
-    document.querySelectorAll("#cv a")[1].textContent = translations.en.viewCard;
-    document.querySelector("#sobremi h1").textContent = translations.en.aboutMe;
-    document.getElementById("miparrafo").textContent = translations.en.aboutParagraph;
-    document.querySelector("#skills h1").textContent = translations.en.skills;
-    document.querySelectorAll("h2")[0].textContent = translations.en.languages;
-    document.querySelectorAll("h2")[1].textContent = translations.en.frameworks;
-    document.querySelectorAll("h2")[2].textContent = translations.en.tools;
-};
+    // Eventos de los botones
+    if (botonIngles) {
+        botonIngles.addEventListener("click", function () {
+            cambiarIdioma("en");
+        });
+    }
 
-const translateToSpanish = () => {
-    document.getElementById("escribe").textContent = translations.es.greeting;
-    document.querySelectorAll("#cv a")[0].textContent = translations.es.viewCV;
-    document.querySelectorAll("#cv a")[1].textContent = translations.es.viewCard;
-    document.querySelector("#sobremi h1").textContent = translations.es.aboutMe;
-    document.getElementById("miparrafo").textContent = translations.es.aboutParagraph;
-    document.querySelector("#skills h1").textContent = translations.es.skills;
-    document.querySelectorAll("h2")[0].textContent = translations.es.languages;
-    document.querySelectorAll("h2")[1].textContent = translations.es.frameworks;
-    document.querySelectorAll("h2")[2].textContent = translations.es.tools;
-};
+    if (botonEspanol) {
+        botonEspanol.addEventListener("click", function () {
+            cambiarIdioma("es");
+        });
+    }
 
-// Add event listeners to buttons
-document.getElementById("translate-en").addEventListener("click", translateToEnglish);
-document.getElementById("translate-es").addEventListener("click", translateToSpanish);
+    // Idioma inicial
+    cambiarIdioma("es");
+
+});
