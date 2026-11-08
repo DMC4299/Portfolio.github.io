@@ -1,115 +1,260 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portfolio personal de Domingo, apasionado de la tecnología y el desarrollo de software.">
+    <meta name="author" content="Domingo">
+
     <title>Mi Portfolio</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <button id="modoscuro">Modo Oscuro</button>
-    <button id="translate-en">English</button>
-    <button id="translate-es">Español</button>
-    <div id="hola">
-        <h1><span id="escribe">Hola, soy Domingo</span><img id="saludo" src="images/emojisaludo.png" alt="Saludo"></h1>
-        <div id="cv">
-            <a href="CV.pdf" target="_blank">Ver mi CV</a>
-            <a href="Carta.pdf" target="_blank">Ver mi Carta</a>
-        </div>
-        <div id="contacto">
-            <a href="mailto:domocu4299@gmail.com"><img src="images/gmail.png" alt="Gmail"></a>
-            <a href="https://github.com/DMC4299" target="_blank"><img id="icongithub" src="images/github.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/domingomolinacutillas/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
-        </div>
-    </div>
-    <div id="apartado">
-        <h1>Sobre mí</h1><hr>
-        <div id="divmedio">
-            <img id="mifoto" src="images/mifoto.jpg" alt="Foto de Domingo">
-            <p id="miparrafo">Soy un apasionado de la tecnología y el desarrollo de software. Me encanta aprender y trabajar en proyectos desafiantes que me permitan crecer profesionalmente. Entre mis aficiones se encuentran los videojuegos, cocinar y hacer ejercicio.</p>
-        </div> 
-    </div>
-    <div id="apartado">
-        <h1>Skills</h1><hr>
-        <h2>Lenguajes</h2>
-        <div id="lenguajes">
-            <div id="parte"><img src="images/Html5.png" alt="HTML5"></div>
-            <div id="parte"><img src="images/Css3.png" alt="CSS3"></div>
-            <div id="parte"><img src="images/Js.png" alt="JavaScript"></div>
-            <div id="parte"><img src="images/Java.png" alt="Java"></div>
-            <div id="parte"><img src="images/Python.png" alt="Python"></div>
-            <div id="parte"><img src="images/Php.png" alt="PHP"></div>
-        </div>
-        <h2>Frameworks y librerías</h2>
-        <div id="lenguajes">
-            <div id="parte"><img src="images/Angular.png" alt="Angular"></div>
-            <div id="parte"><img src="images/Spring.png" alt="Spring"></div>
-        </div>
-        <h2>Tecnologías y herramientas</h2>
-        <div id="lenguajes">
-            <div id="parte"><img src="images/Citrix.png" alt="Citrix"></div>
-            <div id="parte"><img src="images/Git.png" alt="Git"></div>
-            <div id="parte"><img id="icongithubtec" src="images/github.png" alt="GitHub"></div>
-            <div id="parte"><img src="images/Mysql.png" alt="MySQL"></div>
-            <div id="parte"><img src="images/Mariadb.png" alt="MariaDB"></div>
-            <div id="parte"><img src="images/Virtualbox.png" alt="VirtualBox"></div>
-            <div id="parte"><img src="images/Vmware.png" alt="VMware"></div>
-        </div>
-    </div>
-    <div id="apartado">
-        <h1>Proyectos</h1>
-        <hr>
-        <div id="proyectos">
-            <div class="proyecto">
-                <h2>Adivina el Número</h2>
-                <p>Juego web desarrollado con HTML, CSS y JavaScript, donde el jugador adivina un número entre 0 y 99 con intentos limitados y pistas dinámicas.</p>
-                <a href="https://github.com/DMC4299/Adivinanumero" target="_blank">Ver en GitHub</a>
+
+    <!-- Controles -->
+    <nav id="controles" aria-label="Configuración de la página">
+        <button id="modoscuro" type="button">Modo Oscuro</button>
+        <button id="translate-en" type="button">English</button>
+        <button id="translate-es" type="button">Español</button>
+    </nav>
+
+    <main>
+
+        <!-- Presentación -->
+        <header id="hola">
+            <h1>
+                <span id="escribe">Hola, soy Domingo</span>
+                <img id="saludo" src="images/emojisaludo.png" alt="Saludo">
+            </h1>
+
+            <div id="cv">
+                <a href="CV.pdf" target="_blank" rel="noopener noreferrer">
+                    Ver mi CV
+                </a>
+
+                <a href="Carta.pdf" target="_blank" rel="noopener noreferrer">
+                    Ver mi Carta
+                </a>
             </div>
-            <div class="proyecto">
-                <h2>Agenda de Contactos</h2>
-                <p>El proyecto es una aplicación en C# que gestiona una agenda de contactos, permitiendo agregar, mostrar, actualizar y eliminar contactos, con almacenamiento persistente en un archivo JSON.</p>
-                <a href="https://github.com/DMC4299/Agenda-Csharp" target="_blank">Ver en GitHub</a>
+
+            <div id="contacto">
+                <a href="mailto:domocu4299@gmail.com" aria-label="Enviar correo electrónico">
+                    <img src="images/gmail.png" alt="Gmail">
+                </a>
+
+                <a href="https://github.com/DMC4299"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="GitHub">
+                    <img id="icongithub" src="images/github.png" alt="GitHub">
+                </a>
+
+                <a href="https://www.linkedin.com/in/domingomolinacutillas/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <img src="images/linkedin.png" alt="LinkedIn">
+                </a>
             </div>
-            <div class="proyecto">
-                <h2>Ahorcado</h2>
-                <p>Juego del Ahorcado con HTML, CSS y JavaScript, donde el jugador intenta adivinar una palabra ingresando letras, con un máximo de 6 intentos antes de perder.</p>
-                <a href="https://github.com/DMC4299/Ahorcado" target="_blank">Ver en GitHub</a>
+        </header>
+
+        <!-- Sobre mí -->
+        <section id="apartado" class="apartado">
+            <h1 id="titulo-sobremi">Sobre mí</h1>
+            <hr>
+
+            <div id="divmedio">
+                <img
+                    id="mifoto"
+                    src="images/mifoto.jpg"
+                    alt="Foto de Domingo"
+                >
+
+                <p id="miparrafo">
+                    Soy un apasionado de la tecnología y el desarrollo de software.
+                    Me encanta aprender y trabajar en proyectos desafiantes que me
+                    permitan crecer profesionalmente. Entre mis aficiones se
+                    encuentran los videojuegos, cocinar y hacer ejercicio.
+                </p>
             </div>
-            <div class="proyecto">
-                <h2>Calculadora JavaScript</h2>
-                <p>Desarrollo de una calculadora web con HTML, CSS y JavaScript, capaz de realizar suma, resta, multiplicación y división. Su diseño es sencillo, optimizado y responsive para una mejor experiencia de usuario.</p>
-                <a href="https://github.com/DMC4299/Calculadora-JS" target="_blank">Ver en GitHub</a>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="apartado">
+            <h1 id="titulo-skills">Skills</h1>
+            <hr>
+
+            <h2 id="titulo-lenguajes">Lenguajes</h2>
+
+            <div id="lenguajes">
+                <div class="parte"><img src="images/Html5.png" alt="HTML5"></div>
+                <div class="parte"><img src="images/Css3.png" alt="CSS3"></div>
+                <div class="parte"><img src="images/Js.png" alt="JavaScript"></div>
+                <div class="parte"><img src="images/Java.png" alt="Java"></div>
+                <div class="parte"><img src="images/Python.png" alt="Python"></div>
+                <div class="parte"><img src="images/Php.png" alt="PHP"></div>
             </div>
-            <div class="proyecto">
-                <h2>Calculadora C#</h2>
-                <p>Desarrollo de una calculadora de consola en C# con operaciones básicas y avanzadas: suma, resta, multiplicación, división, raíz cuadrada y exponenciación.</p>
-                <a href="https://github.com/DMC4299/Calculadora-CSharp" target="_blank">Ver en GitHub</a>
+
+            <h2 id="titulo-frameworks">Frameworks y librerías</h2>
+
+            <div id="lenguajes-frameworks" class="lenguajes">
+                <div class="parte"><img src="images/Angular.png" alt="Angular"></div>
+                <div class="parte"><img src="images/Spring.png" alt="Spring"></div>
             </div>
-            <div class="proyecto">
-                <h2>Clima Webapp</h2>
-                <p>Aplicación web que muestra el clima en tiempo real y las predicciones para los próximos días, permitiendo buscar por ciudad o usar la geolocalización para obtener el clima de la ubicación actual.</p>
-                <a href="https://github.com/DMC4299/Clima-Webapp" target="_blank">Ver en GitHub</a>
+
+            <h2 id="titulo-herramientas">Tecnologías y herramientas</h2>
+
+            <div id="lenguajes-herramientas" class="lenguajes">
+                <div class="parte"><img src="images/Citrix.png" alt="Citrix"></div>
+                <div class="parte"><img src="images/Git.png" alt="Git"></div>
+                <div class="parte">
+                    <img id="icongithubtec" src="images/github.png" alt="GitHub">
+                </div>
+                <div class="parte"><img src="images/Mysql.png" alt="MySQL"></div>
+                <div class="parte"><img src="images/Mariadb.png" alt="MariaDB"></div>
+                <div class="parte"><img src="images/Virtualbox.png" alt="VirtualBox"></div>
+                <div class="parte"><img src="images/Vmware.png" alt="VMware"></div>
             </div>
-            <div class="proyecto">
-                <h2>Generador-Password</h2>
-                <p>El proyecto es una herramienta para generar contraseñas aleatorias personalizables, permitiendo a los usuarios definir la longitud y seleccionar los caracteres a incluir para crear contraseñas seguras.</p>
-                <a href="https://github.com/DMC4299/Generador-Password" target="_blank">Ver en GitHub</a>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="apartado" class="apartado">
+            <h1 id="titulo-proyectos">Proyectos</h1>
+            <hr>
+
+            <div id="proyectos">
+
+                <article class="proyecto">
+                    <h2>Adivina el Número</h2>
+                    <p>
+                        Juego web desarrollado con HTML, CSS y JavaScript,
+                        donde el jugador adivina un número entre 0 y 99 con
+                        intentos limitados y pistas dinámicas.
+                    </p>
+                    <a href="https://github.com/DMC4299/Adivinanumero"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Agenda de Contactos</h2>
+                    <p>
+                        Aplicación en C# que gestiona una agenda de contactos,
+                        permitiendo agregar, mostrar, actualizar y eliminar
+                        contactos, con almacenamiento persistente en un archivo JSON.
+                    </p>
+                    <a href="https://github.com/DMC4299/Agenda-Csharp"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Ahorcado</h2>
+                    <p>
+                        Juego del Ahorcado con HTML, CSS y JavaScript,
+                        donde el jugador intenta adivinar una palabra
+                        ingresando letras, con un máximo de 6 intentos.
+                    </p>
+                    <a href="https://github.com/DMC4299/Ahorcado"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Calculadora JavaScript</h2>
+                    <p>
+                        Calculadora web con HTML, CSS y JavaScript,
+                        capaz de realizar suma, resta, multiplicación
+                        y división. Diseño responsive.
+                    </p>
+                    <a href="https://github.com/DMC4299/Calculadora-JS"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Calculadora C#</h2>
+                    <p>
+                        Calculadora de consola en C# con operaciones
+                        básicas y avanzadas: suma, resta, multiplicación,
+                        división, raíz cuadrada y exponenciación.
+                    </p>
+                    <a href="https://github.com/DMC4299/Calculadora-CSharp"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Clima Webapp</h2>
+                    <p>
+                        Aplicación web que muestra el clima en tiempo real
+                        y las predicciones para los próximos días, permitiendo
+                        buscar por ciudad o utilizar la geolocalización.
+                    </p>
+                    <a href="https://github.com/DMC4299/Clima-Webapp"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Generador-Password</h2>
+                    <p>
+                        Herramienta para generar contraseñas aleatorias
+                        personalizables, permitiendo definir la longitud
+                        y seleccionar los caracteres.
+                    </p>
+                    <a href="https://github.com/DMC4299/Generador-Password"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Gestor-de-Tareas-CSharp</h2>
+                    <p>
+                        Aplicación que permite agregar, mostrar, completar
+                        o eliminar tareas. Los datos se guardan en un
+                        archivo de texto.
+                    </p>
+                    <a href="https://github.com/DMC4299/Gestor-de-Tareas-CSharp"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
+                <article class="proyecto">
+                    <h2>Reloj</h2>
+                    <p>
+                        Reloj digital interactivo con animaciones,
+                        que muestra la hora en formato de 12 horas
+                        junto con la fecha y un fondo de estrellas.
+                    </p>
+                    <a href="https://github.com/DMC4299/Reloj"
+                       target="_blank" rel="noopener noreferrer">
+                        Ver en GitHub
+                    </a>
+                </article>
+
             </div>
-            <div class="proyecto">
-                <h2>Gestor-de-Tareas-CSharp</h2>
-                <p>El Gestor de Tareas es una aplicación que permite agregar, mostrar, completar o eliminar tareas de manera sencilla. Las tareas se guardan en un archivo de texto, lo que garantiza su persistencia entre sesiones.</p>
-                <a href="https://github.com/DMC4299/Gestor-de-Tareas-CSharp" target="_blank">Ver en GitHub</a>
-            </div>
-            <div class="proyecto">
-                <h2>Reloj</h2>
-                <p>Este proyecto es un reloj digital interactivo con animaciones, que muestra la hora en formato de 12 horas junto con la fecha. Además, cuenta con estrellas que parpadean y se distribuyen aleatoriamente en el fondo, ofreciendo una atmósfera estética y dinámica.</p>
-                <a href="https://github.com/DMC4299/Reloj" target="_blank">Ver en GitHub</a>
-            </div>
-        </div>
-    </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
     <script src="js/escribir.js"></script>
     <script src="js/darkmode.js"></script>
     <script src="js/traduccion.js"></script>
     <script src="js/titulopestaña.js"></script>
+
 </body>
 </html>
